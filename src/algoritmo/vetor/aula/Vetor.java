@@ -12,7 +12,7 @@ public class Vetor {
 		this.tamanho = 0;
 	}
 
-	public void addElementoVetor(String elemento) throws Exception {
+	public void addVectorElement(String elemento) throws Exception {
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[tamanho] = elemento;
 			this.tamanho++;
@@ -21,7 +21,7 @@ public class Vetor {
 	 	}
 	}
 	
-	public int getTamanhoVetor() {
+	public int getSizeVector() {
 		return this.tamanho;
 	}
 
@@ -41,7 +41,7 @@ public class Vetor {
 		return builder.toString();
 	}
 	
-	public String getValuePorIndexVetor(int posicaoBuscada) throws Exception {
+	public String getValueByIndexVector(int posicaoBuscada) throws Exception {
 		// buscar elemento no vetor pela posicao didgitada pelo usuario;
 		// retorna valor caso existe e esteja na posicao correta
 		// caso a posicao nao estiver no limite do array gerar um exeption de erro
@@ -49,7 +49,7 @@ public class Vetor {
 		if(posicaoBuscada >= 0 && posicaoBuscada < tamanho  ) {
 			return elementos[posicaoBuscada];
 		}else {
-			 throw new Exception("Erro valor da posição não existe");
+			 throw new IllegalArgumentException("Erro! Posição Invalida");
 		}
 	}
 
